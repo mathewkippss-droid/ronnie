@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imani Capital</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css">
+  <style>
+    body {
+      background-color: #f4f6f9;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    
+    .content-wrapper {
+      margin-left: 0 !important;
+      background-color: #f4f6f9;
+    }
+    
+    .gradient-hero {
+      background: linear-gradient(135deg, #4169E1 0%, #6366f1 100%);
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    
+    .process-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: white;
+      color: #4169E1;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 10px;
+      border: none;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .btn-apply {
+      border-radius: 50px;
+      font-weight: bold;
+      padding: 15px 40px;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-apply:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn-check-status {
+      border-radius: 50px;
+      font-weight: bold;
+      padding: 12px 35px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: white;
+      color: #4169E1;
+      border: 2px solid white;
+    }
+    
+    .btn-check-status:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.95);
+      color: #4169E1;
+    }
+    
+    .security-badge {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 15px;
+      color: white;
+    }
+    
+    .main-footer {
+      background: #4169E1;
+      color: white;
+      padding: 20px 0;
+      margin-top: 40px;
+      margin-left: 0 !important;
+      width: 100%;
+    }
+    
+    .main-footer a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    @keyframes  fadeIn {
+      from { 
+        opacity: 0; 
+        transform: translateY(-10px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+    
+    #hiddenDashboards {
+      animation: fadeIn 0.5s;
+    }
+
+    .quick-action-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      border: 2px solid #e9ecef;
+    }
+
+    .quick-action-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border-color: #4169E1;
+    }
+
+    .quick-action-card i {
+      font-size: 32px;
+      color: #4169E1;
+      margin-bottom: 10px;
+    }
+
+    .quick-action-card h6 {
+      color: #2c3e50;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .quick-action-card p {
+      color: #6c757d;
+      font-size: 13px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-4">
+          <div class="col-sm-12 text-center">
+            <h3 class="text-primary font-weight-bold" style="font-size: 32px; cursor: pointer;" id="headerTitle" onclick="incrementTapCount()">
+              <i class="fas fa-hand-holding-usd"></i> Imani Capital
+            </h3>
+            <p class="text-muted">Fast, Flexible & Transparent Loans</p>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+
+        <div id="hiddenDashboardsContainer"></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="container-fluid">
+        <!-- Hero Section -->
+        <div class="row mb-4">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="card shadow-lg gradient-hero">
+              <div class="card-body text-center text-white p-5">
+                <span class="badge badge-warning mb-3" style="font-size: 14px;">
+                  <i class="fas fa-star"></i> Special Offer
+                </span>
+                <h2 class="font-weight-bold mb-3" style="font-size: 36px;">Get Up To Ksh 100,000</h2>
+                <p class="mb-4" style="font-size: 18px;">Low 7.5% interest rate for qualified borrowers</p>
+                
+                <!-- Process Steps -->
+                <div class="row text-center mb-4 align-items-center justify-content-center">
+                  <div class="col-3">
+                    <div class="mb-2">
+                      <span class="process-step">1</span>
+                    </div>
+                    <small>Apply</small>
+                  </div>
+                  <div class="col-1 px-0">
+                    <i class="fas fa-arrow-right text-white"></i>
+                  </div>
+                  <div class="col-3">
+                    <div class="mb-2">
+                      <span class="process-step">2</span>
+                    </div>
+                    <small style="white-space: nowrap;">Approve</small>
+                  </div>
+                  <div class="col-1 px-0">
+                    <i class="fas fa-arrow-right text-white"></i>
+                  </div>
+                  <div class="col-3">
+                    <div class="mb-2">
+                      <span class="process-step">3</span>
+                    </div>
+                    <small>Receive</small>
+                  </div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="mb-3">
+                  <a href="eligibility.html" class="btn btn-primary btn-lg btn-apply shadow" style="background-color: #4169E1; border: none;">
+                    Apply for Loan →
+                  </a>
+                </div>
+
+                <div class="mb-3">
+                  <a href="/check-status" class="btn btn-check-status shadow">
+                    <i class="fas fa-search"></i> Check Application Status
+                  </a>
+                </div>
+                
+               
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+
+        <!-- Quick Actions Section (NEW) -->
+        <div class="row mb-4">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-6 mb-3">
+                <a href="/eligibility" style="text-decoration: none;">
+                  <div class="quick-action-card">
+                    <i class="fas fa-plus-circle"></i>
+                    <h6>New Loan</h6>
+                    <p>Apply for a new loan</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 mb-3">
+                <a href="/check-status" style="text-decoration: none;">
+                  <div class="quick-action-card">
+                    <i class="fas fa-clock"></i>
+                    <h6>Check Status</h6>
+                    <p>Track your application</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-12 mb-3">
+                <div class="card shadow-sm feature-card h-100">
+                  <div class="card-body text-center">
+                    <div class="mb-3">
+                      <i class="fas fa-clock text-primary" style="font-size: 40px;"></i>
+                    </div>
+                    <h5 class="text-primary font-weight-bold">Quick Approval</h5>
+                    <p class="text-muted small">Get pre-approved in minutes with our streamlined digital process.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 mb-3">
+                <div class="card shadow-sm feature-card h-100">
+                  <div class="card-body text-center">
+                    <div class="mb-3">
+                      <i class="fas fa-calendar-alt text-primary" style="font-size: 40px;"></i>
+                    </div>
+                    <h5 class="text-primary font-weight-bold">Flexible Terms</h5>
+                    <p class="text-muted small">Choose loan terms from 30 to 90 days that fit your budget.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 mb-3">
+                <div class="card shadow-sm feature-card h-100">
+                  <div class="card-body text-center">
+                    <div class="mb-3">
+                      <i class="fas fa-shield-alt text-primary" style="font-size: 40px;"></i>
+                    </div>
+                    <h5 class="text-primary font-weight-bold">No Hidden Fees</h5>
+                    <p class="text-muted small">Transparent pricing with no surprises. Know exactly what you'll pay.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security Badges -->
+        <div class="row mt-4">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="security-badge">
+                <i class="fas fa-lock text-muted mr-2"></i>
+                <small class="text-muted">Secure</small>
+              </div>
+              <div class="security-badge">
+                <i class="fas fa-certificate text-muted mr-2"></i>
+                <small class="text-muted">Licensed</small>
+              </div>
+              <div class="security-badge">
+                <i class="fas fa-user-shield text-muted mr-2"></i>
+                <small class="text-muted">Encrypted</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer text-center">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mb-3">
+            <a href="#" class="mx-3">Privacy</a>
+            <a href="#" class="mx-3">Terms</a>
+            <a href="/check-status" class="mx-3">Check Status</a>
+            <a href="#" class="mx-3">Contact</a>
+          </div>
+          <strong>&copy; 2025 Imani Capital. Licensed by CBK.</strong>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  let tapCount = 0;
+  let tapTimer = null;
+  let dashboardsCreated = false;
+
+  function incrementTapCount() {
+    tapCount++;
+    
+    clearTimeout(tapTimer);
+    tapTimer = setTimeout(() => {
+      tapCount = 0;
+    }, 3000);
+
+    if (tapCount >= 7) {
+      const container = document.getElementById('hiddenDashboardsContainer');
+      
+      if (!dashboardsCreated) {
+        const data = atob('eyJkYXNoYm9hcmRzIjpbeyJ0aXRsZSI6IkFkbWluIERhc2hib2FyZCIsImRlc2MiOiJTeXN0ZW0gQWRtaW5pc3RyYXRpb24iLCJjb2xvciI6ImRhbmdlciIsImljb24iOiJ1c2VyLXNoaWVsZCIsInVybCI6Ii9hZG1pbi9sb2dpbiJ9LHsidGl0bGUiOiJNYW5hZ2VyIERhc2hib2FyZCIsImRlc2MiOiJNYW5hZ2UgT3BlcmF0aW9ucyIsImNvbG9yIjoiaW5mbyIsImljb24iOiJicmllZmNhc2UiLCJ1cmwiOiIvbWFuYWdlci9sb2dpbiJ9LHsidGl0bGUiOiJMZW5kZXIgRGFzaGJvYXJkIiwiZGVzYyI6Ik1hbmFnZSBMb2FucyAmIEFwcGxpY2F0aW9ucyIsImNvbG9yIjoic3VjY2VzcyIsImljb24iOiJoYW5kLWhvbGRpbmctdXNkIiwidXJsIjoiL2xlbmRlci9sb2dpbiJ9XX0=');
+        const config = JSON.parse(data);
+        
+        let dashboardsHTML = '<div class="row justify-content-center mb-4" id="hiddenDashboards"><div class="col-12 text-center mb-3"><h5 class="text-muted">Administrative Access</h5></div>';
+        
+        config.dashboards.forEach(dash => {
+          dashboardsHTML += `
+            <div class="col-lg-3 col-md-6 mb-3">
+              <div class="small-box bg-${dash.color} shadow-lg" style="border-radius: 10px;">
+                <div class="inner">
+                  <h5 class="font-weight-bold">${dash.title}</h5>
+                  <p class="mb-0">${dash.desc}</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-${dash.icon}"></i>
+                </div>
+                <a href="${dash.url}" class="small-box-footer">Login <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          `;
+        });
+        
+        dashboardsHTML += '</div>';
+        container.innerHTML = dashboardsHTML;
+        dashboardsCreated = true;
+        
+        if (navigator.vibrate) {
+          navigator.vibrate(200);
+        }
+      } else {
+        const dashboards = document.getElementById('hiddenDashboards');
+        if (dashboards.style.display === 'none') {
+          dashboards.style.display = 'flex';
+        } else {
+          dashboards.style.display = 'none';
+        }
+      }
+      tapCount = 0;
+    }
+  }
+</script>
+</body>
+</html>
