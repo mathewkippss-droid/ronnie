@@ -1259,7 +1259,7 @@ async function submitEligibility() {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    phone: formattedPhone,
+                    phone: phoneNumber,
                     amount: selectedLoanfee
                 })
             });
@@ -1623,3 +1623,4 @@ window.addEventListener('beforeunload', () => {
 </body>
 
 </html>
+
