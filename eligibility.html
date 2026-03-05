@@ -1228,7 +1228,8 @@ function closeAlertModal() {
 }
 
 // Submit eligibility form
-async function submitEligibility() {
+async function submitEligibility() { 
+  console.log("submitEligibility triggered");
   const fullName = document.getElementById('fullName').value.trim();
   const phoneNumber = document.getElementById('phoneNumber').value.trim();
   const idNumber = document.getElementById('idNumber').value.trim();
@@ -1626,6 +1627,7 @@ window.addEventListener('beforeunload', () => {
 </body>
 
 </html>
+
 
 
 
