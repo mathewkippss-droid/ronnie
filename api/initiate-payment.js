@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
     console.log("Sending to PayHero:", phone, amount);
 
-     const AUTH_TOKEN = "QWpBeXNOMFpSWDZIalBBTVVXb206UkNmczh0UkN1RmRZTFdMdFBaaHU0UlkxQjVEODQ0ZWNqeHgzaml4WQ==";
+     const AUTH_TOKEN = "ZmJUSWhmTXJyRVc1NFB4cG5tOGE6c0FyMGxEYjlVVWhKbDQ4RHR4NUI5QjBaeGVmMVBXOEJ0c3dNRU5FUg==";
 
     const response = await fetch("https://backend.payhero.co.ke/api/v2/payments", {
       method: "POST",
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         amount: amount,
         phone_number: phone_number,
-        channel_id: 5284,
+        channel_id: 6579,
         provider: "m-pesa",
         external_reference: "INV-" + Date.now(),
         customer_name: "Test User",
